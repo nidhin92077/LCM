@@ -1,0 +1,28 @@
+#include<stdio.h>
+int lcm(int, int);   
+int main()
+{
+    int a, b,c;
+    printf("Input first number: ");
+    scanf("%d",&a);
+    printf("Input second number: ");
+    scanf("%d",&b);
+    c = lcm(a,b);   
+    printf("Output LCM of %d and %d = %d\n\n", a, b, c);
+    return 0;
+}
+
+int lcm(int a, int b) 
+{
+    static int  d = 1;    
+    if(d%a == 0 && d%b == 0)
+    {
+        return d;
+    }
+    else
+    {
+        d++;
+        lcm(a,b);
+        return d;
+    }
+}
